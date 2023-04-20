@@ -10,7 +10,7 @@ exclude = ["assets/**", "tests/**"]
 edition = "2021"
 
 [dependencies]
-cpal = "0.15"
+cpal = { git = "https://github.com/RustAudio/cpal.git", features = ["asio"] }
 claxon = { version = "0.4.2", optional = true }
 hound = { version = "3.3.1", optional = true }
 lewton = { version = "0.10", optional = true }
@@ -27,7 +27,14 @@ mp3 = ["symphonia-mp3"]
 minimp3 = ["dep:minimp3"]
 wasm-bindgen = ["cpal/wasm-bindgen"]
 symphonia-aac = ["symphonia/aac"]
-symphonia-all = ["symphonia-aac", "symphonia-flac", "symphonia-isomp4", "symphonia-mp3", "symphonia-vorbis", "symphonia-wav"]
+symphonia-all = [
+    "symphonia-aac",
+    "symphonia-flac",
+    "symphonia-isomp4",
+    "symphonia-mp3",
+    "symphonia-vorbis",
+    "symphonia-wav",
+]
 symphonia-flac = ["symphonia/flac"]
 symphonia-isomp4 = ["symphonia/isomp4"]
 symphonia-mp3 = ["symphonia/mp3"]
